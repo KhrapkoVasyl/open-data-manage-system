@@ -1,25 +1,25 @@
 const DataSet = require('../db/models/DataSet');
 
-exports.getAllDataSets = async (req, res) => {
+exports.getAllDataSets = async (req, reply) => {
   try {
     let dataSets = await DataSet.findAll();
 
-    res.status(200).json({
+    reply.status(200).send({
       status: 'success',
-      results: dataSets.length,
+      replyults: dataSets.length,
       data: {
         dataSets,
       },
     });
   } catch (err) {
-    res.status(404).json({
+    reply.status(404).send({
       status: 'fail',
       message: err,
     });
   }
 };
 
-exports.getDataSet = async (req, res) => {
+exports.getDataSet = async (req, reply) => {
   try {
     const dataSet = await DataSet.findOne({
       where: {
@@ -29,39 +29,39 @@ exports.getDataSet = async (req, res) => {
 
     if (!dataSet) throw 'Dataset with the specified ID does not exists';
 
-    res.status(200).json({
+    reply.status(200).send({
       status: 'success',
       data: {
         dataSet,
       },
     });
   } catch (err) {
-    res.status(404).json({
+    reply.status(404).send({
       status: 'fail',
       message: err,
     });
   }
 };
 
-exports.createDataSet = async (req, res) => {
+exports.createDataSet = async (req, reply) => {
   try {
     const newDataSet = await DataSet.create(req.body);
 
-    res.status(201).json({
+    reply.status(201).send({
       status: 'success',
       data: {
         newDataSet,
       },
     });
   } catch (err) {
-    res.status(400).json({
+    reply.status(400).send({
       status: 'fail',
       message: err,
     });
   }
 };
 
-exports.updateDataSet = async (req, res) => {
+exports.updateDataSet = async (req, reply) => {
   try {
     const { id } = req.params;
     const [updated] = await DataSet.update(req.body, {
@@ -73,21 +73,21 @@ exports.updateDataSet = async (req, res) => {
     const updatedDataSet = await DataSet.findOne({
       where: { id },
     });
-    res.status(200).json({
+    reply.status(200).send({
       status: 'success',
       data: {
         updatedDataSet,
       },
     });
   } catch (err) {
-    res.status(404).json({
+    reply.status(404).send({
       status: 'fail',
       message: err,
     });
   }
 };
 
-exports.deleteDataSet = async (req, res) => {
+exports.deleteDataSet = async (req, reply) => {
   const id = req.params.id;
 
   try {
@@ -103,12 +103,12 @@ exports.deleteDataSet = async (req, res) => {
       },
     });
 
-    res.status(200).json({
+    reply.status(200).send({
       status: 'success',
       data: null,
     });
   } catch (err) {
-    res.status(404).json({
+    reply.status(404).send({
       status: 'fail',
       message: err,
     });

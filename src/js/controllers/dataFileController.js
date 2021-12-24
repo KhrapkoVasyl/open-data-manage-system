@@ -1,10 +1,10 @@
 const DataFile = require('../db/models/DataFile');
 
-exports.getAllDataFiles = async (req, res) => {
+exports.getAllDataFiles = async (req, reply) => {
   try {
     let files = await DataFile.findAll();
 
-    res.status(200).json({
+    reply.status(200).send({
       status: 'success',
       results: files.length,
       data: {
@@ -12,7 +12,7 @@ exports.getAllDataFiles = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(404).json({
+    reply.status(404).send({
       status: 'fail',
       message: err,
     });
@@ -27,7 +27,7 @@ exports.getAllDataFilesInDataSet = async (req, res) => {
       },
     });
 
-    res.status(200).json({
+    res.status(200).send({
       status: 'success',
       results: files.length,
       data: {
@@ -35,7 +35,7 @@ exports.getAllDataFilesInDataSet = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(404).json({
+    res.status(404).send({
       status: 'fail',
       message: err,
     });
@@ -55,14 +55,14 @@ exports.getDataFile = async (req, res) => {
       throw 'Datafile with the specified ID was not found in this Dataset';
     }
 
-    res.status(200).json({
+    res.status(200).send({
       status: 'success',
       data: {
         file,
       },
     });
   } catch (err) {
-    res.status(404).json({
+    res.status(404).send({
       status: 'fail',
       message: err,
     });
@@ -74,14 +74,14 @@ exports.createDataFile = async (req, res) => {
     req.body.dataSet = +req.params.id;
     const newFile = await DataFile.create(req.body);
 
-    res.status(201).json({
+    res.status(201).send({
       status: 'success',
       data: {
         newFile,
       },
     });
   } catch (err) {
-    res.status(400).json({
+    res.status(400).send({
       status: 'fail',
       message: err,
     });
@@ -102,14 +102,14 @@ exports.updateDataFile = async (req, res) => {
     if (!updated)
       throw 'Datafile with the specified ID was not found in this Dataset';
 
-    res.status(200).json({
+    res.status(200).send({
       status: 'success',
       data: {
         updatedFile,
       },
     });
   } catch (err) {
-    res.status(404).json({
+    res.status(404).send({
       status: 'fail',
       message: err,
     });
@@ -128,12 +128,12 @@ exports.deleteDataFile = async (req, res) => {
     if (!deleted)
       throw 'Datafile with the specified ID was not found in this Dataset';
 
-    res.status(200).json({
+    res.status(200).send({
       status: 'success',
       data: null,
     });
   } catch (err) {
-    res.status(404).json({
+    res.status(404).send({
       status: 'fail',
       message: err,
     });
