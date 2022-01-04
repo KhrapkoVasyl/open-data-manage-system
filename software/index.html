@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Реалізація інформаційного та програмного забезпечення | Система управління відкритими даними</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/open-data-manage-system/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="description" content="Курсова робота з дисципліни "Бази даних"">
+    
+    <link rel="preload" href="/open-data-manage-system/assets/css/0.styles.ec1ab2ed.css" as="style"><link rel="preload" href="/open-data-manage-system/assets/js/app.ebea273d.js" as="script"><link rel="preload" href="/open-data-manage-system/assets/js/2.f9deb490.js" as="script"><link rel="preload" href="/open-data-manage-system/assets/js/23.f68ddb1e.js" as="script"><link rel="prefetch" href="/open-data-manage-system/assets/js/10.1f0b2db4.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/11.2db13ea8.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/12.04791660.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/13.500837e6.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/14.ea916717.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/15.b2c8db1a.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/16.c8506fcd.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/17.25b47757.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/18.a7d487ca.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/19.3146e2b8.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/20.03e0853e.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/21.1d813f95.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/22.964e134f.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/24.f309a456.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/25.ec993620.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/26.05733454.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/27.8d4385e2.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/28.25540517.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/3.cb3cca81.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/4.2905fd12.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/5.19446e2c.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/6.7525d4ef.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/7.63bbc8ba.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/8.3a86f016.js"><link rel="prefetch" href="/open-data-manage-system/assets/js/9.2d16f536.js">
+    <link rel="stylesheet" href="/open-data-manage-system/assets/css/0.styles.ec1ab2ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/open-data-manage-system/" class="home-link router-link-active"><!----> <span class="site-name">Система управління відкритими даними</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/open-data-manage-system/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/KhrapkoVasyl/open-data-manage-system" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/open-data-manage-system/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/KhrapkoVasyl/open-data-manage-system" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/open-data-manage-system/intro/" class="sidebar-link">Вступ</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/open-data-manage-system/requirements/" class="sidebar-heading clickable"><span>Розроблення загальних вимог до системи</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/open-data-manage-system/use%20cases/" class="sidebar-link">Розроблення вимог до функціональности системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open-data-manage-system/use%20cases/#дiаграма-прецедентiв" class="sidebar-link">Дiаграма прецедентiв</a></li><li class="sidebar-sub-header"><a href="/open-data-manage-system/use%20cases/#схеми-використання-для-споживача-даних" class="sidebar-link">Схеми використання для споживача даних</a></li><li class="sidebar-sub-header"><a href="/open-data-manage-system/use%20cases/#схеми-використання-для-видавника-даних" class="sidebar-link">Схеми використання для видавника даних</a></li><li class="sidebar-sub-header"><a href="/open-data-manage-system/use%20cases/#сценаріі-для-споживача-даних" class="sidebar-link">Сценарії для  споживача даних</a></li><li class="sidebar-sub-header"><a href="/open-data-manage-system/use%20cases/#сценаріі-для-видавника-даних" class="sidebar-link">Сценарії для  видавника даних</a></li></ul></li><li><a href="/open-data-manage-system/design/" class="sidebar-link">Проектування інформаційного забезпечення</a></li><li><a href="/open-data-manage-system/software/" aria-current="page" class="active sidebar-link">Реалізація інформаційного та програмного забезпечення</a></li><li><a href="/open-data-manage-system/test/" class="sidebar-link">Тестування працездатності системи</a></li><li><a href="/open-data-manage-system/conclusion/" class="sidebar-link">Висновки</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="реалізація-інформаціиного-та-програмного-забезпечення"><a href="#реалізація-інформаціиного-та-програмного-забезпечення" class="header-anchor">#</a> Реалізація інформаційного та програмного забезпечення</h1> <p>В рамках проекту розробляється:</p> <ul><li>SQL-скрипт для створення на початкового наповнення бази даних</li></ul> <p>-- MySQL Workbench Forward Engineering</p> <p>SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';</p> <hr> <p>-- Schema omds</p> <hr> <p>DROP SCHEMA IF EXISTS <code>omds</code> ;</p> <hr> <p>-- Schema omds</p> <hr> <p>CREATE SCHEMA IF NOT EXISTS <code>omds</code> DEFAULT CHARACTER SET utf8 ;
+USE <code>omds</code> ;</p> <hr> <p>-- Table <code>omds</code>.<code>Type</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>Type</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>Type</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>text</code> VARCHAR(45) NULL,
+PRIMARY KEY (<code>id</code>))
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>User</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>User</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>User</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>password</code> VARCHAR(100) NOT NULL,
+<code>name</code> VARCHAR(100) NOT NULL,
+PRIMARY KEY (<code>id</code>))
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>State</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>State</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>State</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>name</code> VARCHAR(255) NULL,
+PRIMARY KEY (<code>id</code>))
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>Category</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>Category</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>Category</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>category</code> INT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_Category_Category1_idx</code> (<code>category</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_Category_Category1</code>
+FOREIGN KEY (<code>category</code>)
+REFERENCES <code>omds</code>.<code>Category</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>MetaDataKey</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>MetaDataKey</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>MetaDataKey</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>key</code> VARCHAR(255) NULL,
+<code>description</code> VARCHAR(511) NULL,
+<code>metaDataKey</code> INT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_MetaDataKey_MetaDataKey1_idx</code> (<code>metaDataKey</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_MetaDataKey_MetaDataKey1</code>
+FOREIGN KEY (<code>metaDataKey</code>)
+REFERENCES <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>ActionType</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>ActionType</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>ActionType</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>name</code> VARCHAR(255) NULL,
+<code>description</code> VARCHAR(255) NULL,
+PRIMARY KEY (<code>id</code>))
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>AvailableFor</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>AvailableFor</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>AvailableFor</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>type</code> INT NOT NULL,
+<code>metaDataKey</code> INT NOT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_AvailableFor_Type_idx</code> (<code>type</code> ASC) VISIBLE,
+INDEX <code>fk_AvailableFor_MetaDataKey1_idx</code> (<code>metaDataKey</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_AvailableFor_Type</code>
+FOREIGN KEY (<code>type</code>)
+REFERENCES <code>omds</code>.<code>Type</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_AvailableFor_MetaDataKey1</code>
+FOREIGN KEY (<code>metaDataKey</code>)
+REFERENCES <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>Role</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>Role</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>Role</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>name</code> VARCHAR(255) NULL,
+PRIMARY KEY (<code>id</code>))
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>AvailableAction</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>AvailableAction</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>AvailableAction</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>role</code> INT NOT NULL,
+<code>actionType</code> INT NOT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_AvailableAction_Role1_idx</code> (<code>role</code> ASC) VISIBLE,
+INDEX <code>fk_AvailableAction_ActionType1_idx</code> (<code>actionType</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_AvailableAction_Role1</code>
+FOREIGN KEY (<code>role</code>)
+REFERENCES <code>omds</code>.<code>Role</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_AvailableAction_ActionType1</code>
+FOREIGN KEY (<code>actionType</code>)
+REFERENCES <code>omds</code>.<code>ActionType</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>DataSet</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>DataSet</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>DataSet</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>updatedAt</code> DATE NULL,
+<code>createdAt</code> DATE NULL,
+<code>category</code> INT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_DataSet_Category1_idx</code> (<code>category</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_DataSet_Category1</code>
+FOREIGN KEY (<code>category</code>)
+REFERENCES <code>omds</code>.<code>Category</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>Grant</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>Grant</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>Grant</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>user</code> INT NOT NULL,
+<code>role</code> INT NULL,
+<code>actionType</code> INT NULL,
+<code>dataSet</code> INT NOT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_Grant_User1_idx</code> (<code>user</code> ASC) VISIBLE,
+INDEX <code>fk_Grant_Role1_idx</code> (<code>role</code> ASC) VISIBLE,
+INDEX <code>fk_Grant_ActionType1_idx</code> (<code>actionType</code> ASC) VISIBLE,
+INDEX <code>fk_Grant_DataSet1_idx</code> (<code>dataSet</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_Grant_User1</code>
+FOREIGN KEY (<code>user</code>)
+REFERENCES <code>omds</code>.<code>User</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_Grant_Role1</code>
+FOREIGN KEY (<code>role</code>)
+REFERENCES <code>omds</code>.<code>Role</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_Grant_ActionType1</code>
+FOREIGN KEY (<code>actionType</code>)
+REFERENCES <code>omds</code>.<code>ActionType</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_Grant_DataSet1</code>
+FOREIGN KEY (<code>dataSet</code>)
+REFERENCES <code>omds</code>.<code>DataSet</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>Action</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>Action</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>Action</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>at</code> DATE NULL,
+<code>state</code> INT NOT NULL,
+<code>actionType</code> INT NOT NULL,
+<code>grant</code> INT NOT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_Action_State1_idx</code> (<code>state</code> ASC) VISIBLE,
+INDEX <code>fk_Action_ActionType1_idx</code> (<code>actionType</code> ASC) VISIBLE,
+INDEX <code>fk_Action_Grant1_idx</code> (<code>grant</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_Action_State1</code>
+FOREIGN KEY (<code>state</code>)
+REFERENCES <code>omds</code>.<code>State</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_Action_ActionType1</code>
+FOREIGN KEY (<code>actionType</code>)
+REFERENCES <code>omds</code>.<code>ActionType</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_Action_Grant1</code>
+FOREIGN KEY (<code>grant</code>)
+REFERENCES <code>omds</code>.<code>Grant</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>DataFile</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>DataFile</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>DataFile</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>updatedAt</code> DATE NULL,
+<code>createdAt</code> DATE NULL,
+<code>dataSet</code> INT NOT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_DataFile_DataSet1_idx</code> (<code>dataSet</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_DataFile_DataSet1</code>
+FOREIGN KEY (<code>dataSet</code>)
+REFERENCES <code>omds</code>.<code>DataSet</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <hr> <p>-- Table <code>omds</code>.<code>MetaDataValue</code></p> <hr> <p>DROP TABLE IF EXISTS <code>omds</code>.<code>MetaDataValue</code> ;</p> <p>CREATE TABLE IF NOT EXISTS <code>omds</code>.<code>MetaDataValue</code> (
+<code>id</code> INT NOT NULL AUTO_INCREMENT,
+<code>value</code> VARCHAR(255) NULL,
+<code>metaDataKey</code> INT NOT NULL,
+<code>dataSet</code> INT NULL,
+<code>category</code> INT NULL,
+<code>dataFile</code> INT NULL,
+PRIMARY KEY (<code>id</code>),
+INDEX <code>fk_MetaDataValue_MetaDataKey1_idx</code> (<code>metaDataKey</code> ASC) VISIBLE,
+INDEX <code>fk_MetaDataValue_DataSet1_idx</code> (<code>dataSet</code> ASC) VISIBLE,
+INDEX <code>fk_MetaDataValue_Category1_idx</code> (<code>category</code> ASC) VISIBLE,
+INDEX <code>fk_MetaDataValue_DataFile1_idx</code> (<code>dataFile</code> ASC) VISIBLE,
+CONSTRAINT <code>fk_MetaDataValue_MetaDataKey1</code>
+FOREIGN KEY (<code>metaDataKey</code>)
+REFERENCES <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_MetaDataValue_DataSet1</code>
+FOREIGN KEY (<code>dataSet</code>)
+REFERENCES <code>omds</code>.<code>DataSet</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_MetaDataValue_Category1</code>
+FOREIGN KEY (<code>category</code>)
+REFERENCES <code>omds</code>.<code>Category</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+CONSTRAINT <code>fk_MetaDataValue_DataFile1</code>
+FOREIGN KEY (<code>dataFile</code>)
+REFERENCES <code>omds</code>.<code>DataFile</code> (<code>id</code>)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION)
+ENGINE = InnoDB;</p> <p>SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;</p> <hr> <p>-- Data for table <code>omds</code>.<code>Type</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>Type</code> (<code>id</code>, <code>text</code>) VALUES (1, 'String');
+INSERT INTO <code>omds</code>.<code>Type</code> (<code>id</code>, <code>text</code>) VALUES (2, 'Number');
+INSERT INTO <code>omds</code>.<code>Type</code> (<code>id</code>, <code>text</code>) VALUES (3, 'Boolean');</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>User</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (1, 'R6fu6v4X8B', 'Qwerty');
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (2, 'spKjN924T3', 'Misha3000');
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (3, 'XLy5F35a6v', 'Sam');
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (4, '2UXmzGz698', 'Loik');
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (5, 'VG3nguN685', 'Mark');
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (6, '8y8xcM9M5D', 'Antonio');
+INSERT INTO <code>omds</code>.<code>User</code> (<code>id</code>, <code>password</code>, <code>name</code>) VALUES (7, 'JG6Z3rcn57', 'Tzuker');</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>State</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>State</code> (<code>id</code>, <code>name</code>) VALUES (1, 'Created');
+INSERT INTO <code>omds</code>.<code>State</code> (<code>id</code>, <code>name</code>) VALUES (2, 'Updated');
+INSERT INTO <code>omds</code>.<code>State</code> (<code>id</code>, <code>name</code>) VALUES (3, 'Deleted');
+INSERT INTO <code>omds</code>.<code>State</code> (<code>id</code>, <code>name</code>) VALUES (4, 'Viewed');</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>Category</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>Category</code> (<code>id</code>, <code>category</code>) VALUES (1, NULL);
+INSERT INTO <code>omds</code>.<code>Category</code> (<code>id</code>, <code>category</code>) VALUES (2, 1);
+INSERT INTO <code>omds</code>.<code>Category</code> (<code>id</code>, <code>category</code>) VALUES (3, 1);
+INSERT INTO <code>omds</code>.<code>Category</code> (<code>id</code>, <code>category</code>) VALUES (4, NULL);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>MetaDataKey</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (1, 'Title', NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (2, 'Organization name', 'A team of contributors', NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (3, 'Author', NULL, 2);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (4, 'Name', NULL, 3);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (5, 'Surname', '', 3);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (6, 'E-mail', 'Author's or contributor's email', 3);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (7, 'Tags', 'Keywords to find information', NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (8, 'License', NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataKey</code> (<code>id</code>, <code>key</code>, <code>description</code>, <code>metaDataKey</code>) VALUES (9, 'Description', NULL, NULL);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>ActionType</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>ActionType</code> (<code>id</code>, <code>name</code>, <code>description</code>) VALUES (1, 'Create', 'Create dateset');
+INSERT INTO <code>omds</code>.<code>ActionType</code> (<code>id</code>, <code>name</code>, <code>description</code>) VALUES (2, 'Update', 'Update dataset');
+INSERT INTO <code>omds</code>.<code>ActionType</code> (<code>id</code>, <code>name</code>, <code>description</code>) VALUES (3, 'Delete', 'Delete dataset');
+INSERT INTO <code>omds</code>.<code>ActionType</code> (<code>id</code>, <code>name</code>, <code>description</code>) VALUES (4, 'Read', 'Read dataset');</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>AvailableFor</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (1, 1, 1);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (2, 2, 1);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (3, 3, 1);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (4, 2, 2);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (5, 2, 3);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (6, 3, 3);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (7, 2, 4);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (8, 3, 4);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (9, 2, 5);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (10, 3, 5);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (11, 2, 6);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (12, 3, 6);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (13, 2, 7);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (14, 2, 8);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (15, 1, 9);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (16, 2, 9);
+INSERT INTO <code>omds</code>.<code>AvailableFor</code> (<code>id</code>, <code>type</code>, <code>metaDataKey</code>) VALUES (17, 3, 9);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>Role</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>Role</code> (<code>id</code>, <code>name</code>) VALUES (1, 'Author');
+INSERT INTO <code>omds</code>.<code>Role</code> (<code>id</code>, <code>name</code>) VALUES (2, 'DataPublisher');
+INSERT INTO <code>omds</code>.<code>Role</code> (<code>id</code>, <code>name</code>) VALUES (3, 'DataConsumer');</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>AvailableAction</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (1, 1, 1);
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (2, 1, 2);
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (3, 1, 3);
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (4, 1, 4);
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (5, 2, 2);
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (6, 2, 4);
+INSERT INTO <code>omds</code>.<code>AvailableAction</code> (<code>id</code>, <code>role</code>, <code>actionType</code>) VALUES (7, 3, 4);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>DataSet</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>DataSet</code> (<code>id</code>, <code>updatedAt</code>, <code>createdAt</code>, <code>category</code>) VALUES (1, '2021-11-01', '2021-10-01', 2);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>Grant</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>Grant</code> (<code>id</code>, <code>user</code>, <code>role</code>, <code>actionType</code>, <code>dataSet</code>) VALUES (1, 2, 3, 4, 1);
+INSERT INTO <code>omds</code>.<code>Grant</code> (<code>id</code>, <code>user</code>, <code>role</code>, <code>actionType</code>, <code>dataSet</code>) VALUES (2, 6, 1, 1, 1);
+INSERT INTO <code>omds</code>.<code>Grant</code> (<code>id</code>, <code>user</code>, <code>role</code>, <code>actionType</code>, <code>dataSet</code>) VALUES (3, 4, 2, 2, 1);
+INSERT INTO <code>omds</code>.<code>Grant</code> (<code>id</code>, <code>user</code>, <code>role</code>, <code>actionType</code>, <code>dataSet</code>) VALUES (4, 1, 2, 2, 1);
+INSERT INTO <code>omds</code>.<code>Grant</code> (<code>id</code>, <code>user</code>, <code>role</code>, <code>actionType</code>, <code>dataSet</code>) VALUES (5, 3, 3, 4, 1);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>Action</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>Action</code> (<code>id</code>, <code>at</code>, <code>state</code>, <code>actionType</code>, <code>grant</code>) VALUES (1, '2021-11-30', 4, 4, 1);
+INSERT INTO <code>omds</code>.<code>Action</code> (<code>id</code>, <code>at</code>, <code>state</code>, <code>actionType</code>, <code>grant</code>) VALUES (2, '2021-12-01', 1, 1, 2);
+INSERT INTO <code>omds</code>.<code>Action</code> (<code>id</code>, <code>at</code>, <code>state</code>, <code>actionType</code>, <code>grant</code>) VALUES (3, '2021-12-01', 2, 2, 3);
+INSERT INTO <code>omds</code>.<code>Action</code> (<code>id</code>, <code>at</code>, <code>state</code>, <code>actionType</code>, <code>grant</code>) VALUES (4, '2021-12-02', 2, 2, 4);
+INSERT INTO <code>omds</code>.<code>Action</code> (<code>id</code>, <code>at</code>, <code>state</code>, <code>actionType</code>, <code>grant</code>) VALUES (5, '2021-12-03', 4, 4, 5);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>DataFile</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>DataFile</code> (<code>id</code>, <code>updatedAt</code>, <code>createdAt</code>, <code>dataSet</code>) VALUES (1, '2021-10-04', '2021-10-03', 1);
+INSERT INTO <code>omds</code>.<code>DataFile</code> (<code>id</code>, <code>updatedAt</code>, <code>createdAt</code>, <code>dataSet</code>) VALUES (2, '2021-10-22', '2021-10-15', 1);
+INSERT INTO <code>omds</code>.<code>DataFile</code> (<code>id</code>, <code>updatedAt</code>, <code>createdAt</code>, <code>dataSet</code>) VALUES (3, '2021-12-02', '2021-11-01', 1);</p> <p>COMMIT;</p> <hr> <p>-- Data for table <code>omds</code>.<code>MetaDataValue</code></p> <hr> <p>START TRANSACTION;
+USE <code>omds</code>;
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (1, 'Finance', 1, NULL, 1, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (2, 'Prices', 1, NULL, 2, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (3, 'Prices correction coefficients in the World', 1, 1, NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (4, 'International trade in services', 1, NULL, 3, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (5, 'Prices correction coefficients in the USA', 1, NULL, NULL, 1);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (6, 'Prices correction coefficients in the EU', 1, NULL, NULL, 2);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (7, 'Population', 1, NULL, 4, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (8, 'Prices correction coefficients in the Asia', 1, NULL, NULL, 3);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (9, 'QUAO_group', 2, 1, NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (10, 'Alex', 4, 1, NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (11, 'Swarowsky', 5, 1, NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (12, 'Leo', 4, 1, NULL, NULL);
+INSERT INTO <code>omds</code>.<code>MetaDataValue</code> (<code>id</code>, <code>value</code>, <code>metaDataKey</code>, <code>dataSet</code>, <code>category</code>, <code>dataFile</code>) VALUES (13, 'Gorrezen', 5, 1, NULL, NULL);</p> <p>COMMIT;</p> <ul><li>RESTfull сервіс для управління даними</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Останнє оновлення:</span> <span class="time">12/17/2021, 1:13:16 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/open-data-manage-system/design/" class="prev">
+        Проектування інформаційного забезпечення
+      </a></span> <span class="next"><a href="/open-data-manage-system/test/">
+        Тестування працездатності системи
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/open-data-manage-system/assets/js/app.ebea273d.js" defer></script><script src="/open-data-manage-system/assets/js/2.f9deb490.js" defer></script><script src="/open-data-manage-system/assets/js/23.f68ddb1e.js" defer></script>
+  </body>
+</html>
